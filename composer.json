@@ -1,5 +1,5 @@
 {
-	"name": "milanzor/cakephp-plugin-cakedc-migrations",
+	"name": "cakephp-plugin/milanzor-cakedc-migrations",
 	"description": "Migrations Plugin for CakePHP, forked from CakeDC",
 	"type": "cakephp-plugin",
 	"keywords": ["cakephp","migrations"],
@@ -23,5 +23,7 @@
 	"require": {
 		"php": ">=5.3.0",
 		"composer/installers": "*"
-	}
+	},
+        "installer-name": "Migrations"
+    }
 }
