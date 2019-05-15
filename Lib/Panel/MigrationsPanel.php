@@ -6,7 +6,7 @@
  * Redistributions of files must retain the above copyright notice.
  *
  * @copyright Copyright 2010, Cake Development Corporation (http://cakedc.com)
- * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * @license   MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
 //App::import('File', 'Migration', true, array(APP . 'plugins' . DS . 'migrations' . DS . 'libs' . DS ), 'migration.php');
@@ -25,56 +25,57 @@ App::import('Lib', 'Migrations.MigrationVersion');
  */
 class MigrationsPanel extends DebugPanel {
 
-/**
- * Title
- *
- * @var string
- */
-	public $title = 'Migrations';
+    /**
+     * Title
+     *
+     * @var string
+     */
+    public $title = 'Migrations';
 
-/**
- * Element name
- *
- * @var string
- */
-	public $elementName = 'migrations_panel';
+    /**
+     * Element name
+     *
+     * @var string
+     */
+    public $elementName = 'migrations_panel';
 
-/**
- * Plugin name
- *
- * @var string
- */
-	public $plugin = 'migrations';
+    /**
+     * Plugin name
+     *
+     * @var string
+     */
+    public $plugin = 'migrations';
 
-/**
- * Output buffer
- *
- * @var string
- */
-	public $output = '';
+    /**
+     * Output buffer
+     *
+     * @var string
+     */
+    public $output = '';
 
-/**
- * BeforeRender Callback
- *
- * @param Controller $controller Current controller
- * @return array
- */
-	public function beforeRender(Controller $controller) {
-		$v = new MigrationVersion();
-		$map = $migrations = array();
+    /**
+     * BeforeRender Callback
+     *
+     * @param Controller $controller Current controller
+     *
+     * @return array
+     */
+    public function beforeRender(Controller $controller) {
+        $v = new MigrationVersion();
+        $map = $migrations = array();
 
-		$migrations = Hash::merge(array('app'), CakePlugin::loaded());
-		foreach ($migrations as $plugin) {
-			try {
-				$map[$plugin] = array(
-					'map' => $v->getMapping($plugin),
-					'current' => $v->getVersion($plugin)
-				);
-			} catch (MigrationVersionException $e) {
-				// Skip if we get an error.
-			}
-		}
-		return $map;
-	}
+        $migrations = Hash::merge(array('app'), CakePlugin::loaded());
+        foreach ($migrations as $plugin) {
+            try {
+                $map[$plugin] = array(
+                    'map' => $v->getMapping($plugin),
+                    'current' => $v->getVersion($plugin),
+                );
+            } catch (MigrationVersionException $e) {
+                // Skip if we get an error.
+            }
+        }
+        return $map;
+    }
 
 }

@@ -1,4 +1,4 @@
-CakeDC Migrations Plugin
+Milanzors' CakeDC Migrations Plugin Fork
 ========================
 
 [![Bake Status](https://secure.travis-ci.org/CakeDC/migrations.png?branch=master)](http://travis-ci.org/CakeDC/migrations)
