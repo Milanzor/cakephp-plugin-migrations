@@ -25,5 +25,4 @@
 		"composer/installers": "*"
 	},
         "installer-name": "Migrations"
-    }
 }
