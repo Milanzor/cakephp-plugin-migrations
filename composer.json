@@ -1,6 +1,6 @@
 {
-	"name": "cakedc/migrations",
-	"description": "Migrations Plugin for CakePHP",
+	"name": "milanzor/cakephp-plugin-cakedc-migrations",
+	"description": "Migrations Plugin for CakePHP, forked from CakeDC",
 	"type": "cakephp-plugin",
 	"keywords": ["cakephp","migrations"],
 	"homepage": "http://cakedc.com",
